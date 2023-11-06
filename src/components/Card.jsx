@@ -30,7 +30,6 @@ const Card = () => {
       },
     });
   }, []);
-  console.log(import.meta.env.VITE_ALAN_API_KEY);
 
   return (
     <div className="py-6">
