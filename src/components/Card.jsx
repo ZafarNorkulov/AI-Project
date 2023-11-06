@@ -16,7 +16,7 @@ const Card = () => {
   // Alan
   useEffect(() => {
     alanBtn({
-      key: "cf26f534de7a1bbae0560a81ecc8c8092e956eca572e1d8b807a3e2338fdd0dc/stage",
+      key: import.meta.env.VITE_ALAN_API_KEY,
       onCommand: (commandData) => {
         if (commandData.command === "getMenu") {
           setMainCart(commandData.data);
@@ -30,8 +30,8 @@ const Card = () => {
       },
     });
   }, []);
+  console.log(import.meta.env.VITE_ALAN_API_KEY);
 
-  console.log(mainCart.slice(0, 20));
   return (
     <div className="py-6">
       <div className="max-w-[1340px] px-5 mx-auto">
