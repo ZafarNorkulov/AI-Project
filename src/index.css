@@ -40,8 +40,15 @@ h1 {
 .ant-btn span {
   color: #fff;
 }
-.ant-modal-footer button{
-background: #4196FF;
+.ant-modal-footer button {
+  background: #4196ff;
+}
+.ant-modal-content {
+  background: #121111 !important;
+  box-shadow: 5px 5px 5px #3c3c3cb2, -5px -5px 5px #3c3c3cb2 !important;
+}
+.ant-empty-description {
+  color: #f9f9f9 !important;
 }
 
 @media (prefers-color-scheme: light) {

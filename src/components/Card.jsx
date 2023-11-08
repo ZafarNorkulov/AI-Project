@@ -35,7 +35,9 @@ const Card = () => {
     <div className="py-6">
       <div className="max-w-[1340px] px-5 mx-auto">
         <Badge size="small" styles={{ border: "none" }} showZero count={card.length}>
-          <Button onClick={() => setIsModalOpen(true)} >Card</Button>
+          <Button onClick={() => setIsModalOpen(true)} className="w-max ml-auto">
+            Card
+          </Button>
         </Badge>
         <div className="grid grid-cols-12 gap-4">
           {mainCart?.map((item, index) => (
@@ -45,7 +47,7 @@ const Card = () => {
             >
               <div className="card-header">
                 <h4 className="w-max mx-auto">Product #{item?.id}</h4>
-                <img src={item?.images[0]} alt={item?.title} className="w-full h-[400px] bg-transparent" />
+                <img src={item?.images[1]} alt={item?.title} className="w-full h-[400px] bg-transparent object-cover" />
               </div>
               <div className="card-body flex flex-col gap-y-3">
                 <h5 className="text-lg font-bold">{item?.title}</h5>
@@ -70,25 +72,43 @@ const Card = () => {
               </div>
             </div>
           ))}
-          <Modal open={isModalOpen} onOk={() => setIsModalOpen(false)} onCancel={() => setIsModalOpen(false)} >
-            <div className="grid grid-cols-12 gap-4">
-              {card?.lenght > 0 ? (
+          <Modal
+            open={isModalOpen}
+            closeIcon={
+              <svg
+                stroke="#f9f9f9"
+                fill="#f9f9f9"
+                strokeWidth="0"
+                viewBox="0 0 1024 1024"
+                fillRule="evenodd"
+                height="1.5em"
+                width="1.5em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M799.855 166.312c.023.007.043.018.084.059l57.69 57.69c.041.041.052.06.059.084a.118.118 0 0 1 0 .069c-.007.023-.018.042-.059.083L569.926 512l287.703 287.703c.041.04.052.06.059.083a.118.118 0 0 1 0 .07c-.007.022-.018.042-.059.083l-57.69 57.69c-.041.041-.06.052-.084.059a.118.118 0 0 1-.069 0c-.023-.007-.042-.018-.083-.059L512 569.926 224.297 857.629c-.04.041-.06.052-.083.059a.118.118 0 0 1-.07 0c-.022-.007-.042-.018-.083-.059l-57.69-57.69c-.041-.041-.052-.06-.059-.084a.118.118 0 0 1 0-.069c.007-.023.018-.042.059-.083L454.073 512 166.371 224.297c-.041-.04-.052-.06-.059-.083a.118.118 0 0 1 0-.07c.007-.022.018-.042.059-.083l57.69-57.69c.041-.041.06-.052.084-.059a.118.118 0 0 1 .069 0c.023.007.042.018.083.059L512 454.073l287.703-287.702c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"></path>
+              </svg>
+            }
+            onOk={() => setIsModalOpen(false)}
+            onCancel={() => setIsModalOpen(false)}
+          >
+            <div className="grid grid-cols-12 gap-4 mt-10">
+              {card?.length > 0 ? (
                 card?.map((item) => (
                   <>
                     <div className="md:col-span-4" key={item?.id}>
-                      <img src={item?.images[0]} alt="" />
+                      <img src={item?.images[0]} className="object-cover" alt="" />
                     </div>
                     <div className="md:col-span-8">
                       <div className="card-body">
-                        <h5 className="text-lg font-bold">{item?.title}</h5>
+                        <h5 className="text-lg font-bold text-[#e3e3e3]">{item?.title}</h5>
                         <p className="text-sm text-gray-500">{item?.description}</p>
-                        <span>{item?.price}$</span>
+                        <span className="text-[#e3e3e3]">{item?.price}$</span>
                       </div>
                     </div>
                   </>
                 ))
               ) : (
-               <Empty className="col-span-12 mt-10" />
+                <Empty className="col-span-12 mt-10" />
               )}
             </div>
           </Modal>
