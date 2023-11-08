@@ -37,8 +37,11 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-.ant-btn span{
+.ant-btn span {
   color: #fff;
+}
+.ant-modal-footer button{
+background: #4196FF;
 }
 
 @media (prefers-color-scheme: light) {
