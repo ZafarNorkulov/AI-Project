@@ -39,7 +39,7 @@ const Card = () => {
         </Badge>
         <div className="grid grid-cols-12 gap-4">
           {mainCart?.map((item, index) => (
-            <div key={index} className="relative col-span-4 shadow-md p-3 min-h-[550px] flex flex-col justify-between">
+            <div key={index} className="relative lg:col-span-4 sm:col-span-6 col-span-12 shadow-md p-3 min-h-[550px] flex flex-col justify-between">
               <div className="card-header">
                 <h4 className="w-max mx-auto">Product #{item?.id}</h4>
                 <img src={item?.images[0]} alt={item?.title} className="w-full h-[400px] bg-transparent" />
