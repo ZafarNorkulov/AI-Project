@@ -2,6 +2,7 @@ import { Badge, Button, Empty, Modal } from "antd";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import alanBtn from "@alan-ai/alan-sdk-web";
+import Logo from "../../public/logo.png";
 
 const Card = () => {
   const [mainCart, setMainCart] = useState([]);
@@ -34,11 +35,22 @@ const Card = () => {
   return (
     <div className="py-6">
       <div className="max-w-[1340px] px-5 mx-auto">
-        <Badge size="small" styles={{ border: "none" }} showZero count={card.length}>
-          <Button onClick={() => setIsModalOpen(true)} className="w-max ml-auto">
-            Card
-          </Button>
-        </Badge>
+        <div className="flex  justify-between">
+          <img className="w-[120px] " src={Logo} />
+          <Badge size="small" styles={{ border: "none" }} showZero count={card.length}>
+            <svg
+              onClick={() => setIsModalOpen(true)}
+              className="w-6 ml-auto cursor-pointer"
+              stroke="#f9f9f9"
+              fill="#f9f9f9"
+              strokeWidth="0"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+            </svg>
+          </Badge>
+        </div>
         <div className="grid grid-cols-12 gap-4">
           {mainCart?.map((item, index) => (
             <div
