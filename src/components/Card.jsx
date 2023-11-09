@@ -107,10 +107,10 @@ const Card = () => {
               {card?.length > 0 ? (
                 card?.map((item) => (
                   <>
-                    <div className="md:col-span-4" key={item?.id}>
-                      <img src={item?.images[0]} className="object-cover" alt="" />
+                    <div className="md:col-span-4 col-start-2 col-span-6" key={item?.id}>
+                      <img src={item?.images[0]} className="object-cover " alt="" />
                     </div>
-                    <div className="md:col-span-8">
+                    <div className="md:col-span-8 col-span-10 col-start-2">
                       <div className="card-body">
                         <h5 className="text-lg font-bold text-[#e3e3e3]">{item?.title}</h5>
                         <p className="text-sm text-gray-500">{item?.description}</p>
