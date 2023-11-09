@@ -13,6 +13,7 @@
     "@alan-ai/alan-sdk-web": "^1.8.54",
     "antd": "^5.11.0",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-toastify": "^9.1.3"
   },
